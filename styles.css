@@ -1,5 +1,69 @@
+/* Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/* Global styling */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace, sans-serif;
+    font-size: 18px;
+}
+
+/* Selector styling */
+
+body {
+    background-color: #2E282A;
+}
+
+h1 {
+    position: absolute;
+    top: 70vh;
+    left: 0;
+    padding-left: 3vw;
+    font-size: 48px;
+}
+
+
+/* Class styling */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.header {
+    background-color: antiquewhite;
+    color: #446DF6;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 100vh;
+}
+
+.header-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E282A;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 130px;
+}
+
+.header-icon:hover {
+    filter: drop-shadow(3px 7px 18px rgba(65, 65, 65, 0.5));
+    transition: all .65s ease-in-out;
+    cursor: pointer;
+}
+
+.header-icon img {
+    display: flex;
+    height: 100px;
+    width: auto;
 }
