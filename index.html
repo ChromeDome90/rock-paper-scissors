@@ -6,23 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock. Paper. Scissors. Shoot!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/favicon.ico" sizes="any">
     <script src="app.js"></script>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header class="header">
-            <div class="header-icon">
-                <img src="images/r-p-s.svg" alt="rock paper and scissors icons">
+            <div class="rock">
+                <img src="images/rock.svg" alt="rock icon">
+                <h1>Rock.</h1>
             </div>
-            <h1 class="title">Rock. <br />
-            Paper.<br />
-            Scissors.</h1>
+            <div class="paper">
+                <img src="images/paper.svg" alt="paper icon">
+                <h1>Paper.</h1>
+            </div>
+            <div class="scissors">
+                <img src="images/scissors.svg" alt="scissors icon">
+                <h1>Scissors.</h1>
+            </div>
+            <p>Rochambeau. Shoot! <br />
+            Select an option to battle your AI opponent.
+            </p>
         </header>
-        <div class="game-area">
+        <!-- Scoreboard starts here -->
+        <div class="score-board">
+            <div class="score-container">
+                <div id="iconPlayer" class="icon">
+                    <p id="playerScore" class="score">Player: </p>
+                </div>
+            </div>
+            <div class="score-container">
+                <div id="iconComputer" class="icon">
+                    <p id="computerScore" class="score">Computer: </p>
+                </div>
+            </div>
+        </div>
+        <!-- Scoreboard ends here -->
+        <!-- Game choice icon selection -->
+        <div class="buttons">
 
         </div>
-    </div>
+        <!-- End game choice icon selection -->
+    </main>
 </body>
 </html>
