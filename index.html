@@ -13,41 +13,31 @@
 <body>
     <main class="container">
         <header class="header">
-            <div class="rock">
+            <p><strong>Rochambeau. Shoot!</strong><br />
+            Select an option to battle your AI opponent.
+            </p>
+        <!-- Game choice icon selection -->
+            <div id="icon">
                 <img src="images/rock.svg" alt="rock icon">
                 <h1>Rock.</h1>
             </div>
-            <div class="paper">
+            <div class="icon">
                 <img src="images/paper.svg" alt="paper icon">
                 <h1>Paper.</h1>
             </div>
-            <div class="scissors">
+            <div class="icon">
                 <img src="images/scissors.svg" alt="scissors icon">
                 <h1>Scissors.</h1>
             </div>
-            <p>Rochambeau. Shoot! <br />
-            Select an option to battle your AI opponent.
-            </p>
+        <!-- End game choice icon selection -->
         </header>
         <!-- Scoreboard starts here -->
         <div class="score-board">
-            <div class="score-container">
-                <div id="iconPlayer" class="icon">
-                    <p id="playerScore" class="score">Player: </p>
-                </div>
-            </div>
-            <div class="score-container">
-                <div id="iconComputer" class="icon">
-                    <p id="computerScore" class="score">Computer: </p>
-                </div>
-            </div>
+            <div id="iconPlayer" class="icon">Player</div>
+            <div id="iconComputer" class="icon">Computer</div>
+            <span id="playerScore" class="score"> 0 </span>:<span id="computerScore" class="score"> 0 </span>
         </div>
         <!-- Scoreboard ends here -->
-        <!-- Game choice icon selection -->
-        <div class="buttons">
-
-        </div>
-        <!-- End game choice icon selection -->
     </main>
 </body>
 </html>
