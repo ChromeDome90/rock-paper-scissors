@@ -27,6 +27,11 @@ h1 {
     font-size: 39px;
 }
 
+span {
+    font-size: 40px;
+    font-weight: 700;
+}
+
 /* ID styling */
 
 #icon {
@@ -34,7 +39,14 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+}
+
+#playerChoice {
+    order: 1;
+}
+
+#computerChoice {
+    order: 3;
 }
 
 /* Class styling */
@@ -45,6 +57,8 @@ h1 {
 
 .header {
     display: flex;
+    padding: 3vw;
+    justify-content: space-between;
     flex-direction: column;
     background-color: #faebd7;
     color: #13C4A3;
@@ -52,10 +66,16 @@ h1 {
     height: 100vh;
 }
 
-.header p {
-    margin: 30px auto 0 auto;
-    border-bottom: 3px solid #13C4A3;
-    padding: 23px;
+.header p:nth-child(1) {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.header p:nth-child(2) {
+    border: 3px solid #13C4A3;
+    border-radius: 7px;
+    padding: 20px 30px;
     text-align: center;
 }
 
@@ -64,9 +84,43 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 65px;
+    /* margin-top: 40px; */
 }
 
+.gameArea {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #13C4A3;
+    height: 180px;
+    padding: 40px;
+    color: #2E282A;
+    border-radius: 10px;
+}
+
+.choice {
+    display: flex;
+    justify-content: end;
+    background-color: #faebd7;
+    color: #2E282A;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 0 40px;
+    border-radius: 5px;
+
+}
+
+.score {
+    order: 2;
+}
 
 
 
