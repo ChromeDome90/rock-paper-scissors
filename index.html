@@ -15,30 +15,40 @@
         <header class="header">
             <p>Rochambeau. Shoot!</p>
             <p>Select an option to battle your AI opponent.</p>
-        <!-- Game choice icon selection -->
-            <div id="icon">
+        <!-- Player selection -->
+            <div id="rock" class="choice">
                 <img src="images/rock.svg" alt="rock icon">
                 <h1>Rock.</h1>
             </div>
-            <div class="icon">
+            <div id="paper" class="choice">
                 <img src="images/paper.svg" alt="paper icon">
                 <h1>Paper.</h1>
             </div>
-            <div class="icon">
+            <div id="scissors" class="choice">
                 <img src="images/scissors.svg" alt="scissors icon">
                 <h1>Scissors.</h1>
             </div>
         </header>
-        <!-- End game choice icon selection -->
+        <!-- Player selection -->
         <!-- Scoreboard starts here -->
         <div class="gameArea">
             <div class="scoreBoard">
-                <div id="playerChoice" class="choice">Player</div>
-                <div id="computerChoice" class="choice">Computer</div>
+                <div id="playerBadge" class="badge">Player</div>
+                <div id="computerBadge" class="badge">Computer</div>
                 <span id="playerScore" class="score">0&nbsp;:</span><span id="computerScore" class="score">&nbsp;0</span>
             </div>
-        </div>
         <!-- Scoreboard ends here -->
+        <!-- Results message starts here -->
+            <div class="message">
+                <p>Winner winner chicken dinner!</p>
+                <div class="messageIcons">
+                    <img src="images/rock.svg" alt="rock icon">
+                    <span class="messageOperator">></span>
+                    <img src="images/scissors.svg" alt="scissors icon">
+                </div>
+            </div>
+        </div>
+        <!-- Results message ends here -->
     </main>
 </body>
 </html>

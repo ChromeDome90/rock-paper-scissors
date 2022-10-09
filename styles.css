@@ -34,18 +34,11 @@ span {
 
 /* ID styling */
 
-#icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#rock {
+    
 }
 
-#playerChoice {
-    order: 1;
-}
-
-#computerChoice {
+#computerBadge {
     order: 3;
 }
 
@@ -62,8 +55,10 @@ span {
     flex-direction: column;
     background-color: #faebd7;
     color: #13C4A3;
-    width: 40%;
+    width: 35%;
     height: 100vh;
+    border: 10px solid #13C4A3;
+    border-radius: 30px;
 }
 
 .header p:nth-child(1) {
@@ -73,39 +68,41 @@ span {
 }
 
 .header p:nth-child(2) {
-    border: 3px solid #13C4A3;
-    border-radius: 7px;
+    border-top: 1px solid #13C4A3;
+    border-bottom: 1px solid #13C4A3;
     padding: 20px 30px;
     text-align: center;
 }
 
-.icon {
+.choice {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    /* margin-top: 40px; */
 }
 
 .gameArea {
-    width: 60%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 65%;
 }
 
 .scoreBoard {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    order: 2;
     background-color: #13C4A3;
     height: 180px;
     padding: 40px;
     color: #2E282A;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 
-.choice {
+.badge {
     display: flex;
     justify-content: end;
     background-color: #faebd7;
@@ -118,8 +115,40 @@ span {
 
 }
 
-.score {
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message p {
     order: 2;
+    color: #13C4A3;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 15px 20px;
+    margin-bottom: 44px;
+    border: 1px solid #13C4A3;
+    border-radius: 10px;
+}
+
+.messageIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.messageIcons img {
+    height: 120px;
+    width: auto;
+}
+
+.messageOperator {
+    color: #13C4A3;
+    font-size: 78px;
+    font-weight: 300;
 }
 
 
