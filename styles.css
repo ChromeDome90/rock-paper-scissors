@@ -90,8 +90,9 @@ span {
 }
 
 .scoreBoard {
+    order: 1;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     order: 2;
     background-color: #13C4A3;
@@ -116,13 +117,7 @@ span {
 }
 
 .message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.message p {
-    order: 2;
+    order: 3;
     color: #13C4A3;
     font-size: 28px;
     font-weight: 500;
@@ -133,6 +128,7 @@ span {
 }
 
 .messageIcons {
+    order: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
