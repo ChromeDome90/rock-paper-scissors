@@ -34,8 +34,16 @@ span {
 
 /* ID styling */
 
-#rock {
-    
+#rock:hover {
+    cursor: pointer;
+}
+
+#paper:hover {
+    cursor: pointer;
+}
+
+#scissors:hover {
+    cursor: pointer;
 }
 
 #computerBadge {

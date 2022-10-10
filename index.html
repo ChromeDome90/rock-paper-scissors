@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="images/favicon.ico" sizes="any">
-    <script src="app.js"></script>
+    <script type="text/javascript" src="app.js" async></script>
 </head>
 <body>
     <main class="container">
@@ -41,9 +41,9 @@
         <!-- Results message starts here -->
             <p class="message">Winner winner chicken dinner!</p>
             <div class="messageIcons">
-                <img src="images/rock.svg" alt="rock icon">
+                <img id="playerIcon" src="images/rock.svg" alt="rock icon">
                 <span class="messageOperator">></span>
-                <img src="images/scissors.svg" alt="scissors icon">
+                <img id="computerIcon" src="images/scissors.svg" alt="scissors icon">
             </div>
         </div>
         <!-- Results message ends here -->
