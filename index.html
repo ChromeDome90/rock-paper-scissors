@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="images/favicon.ico" sizes="any">
-    <script type="text/javascript" src="app.js" async></script>
+    <script type="text/javascript" src="app.js" defer></script>
 </head>
 <body>
     <main class="container">
@@ -35,7 +35,9 @@
             <div class="scoreBoard">
                 <div id="playerBadge" class="badge">Player</div>
                 <div id="computerBadge" class="badge">Computer</div>
-                <span id="playerScore" class="score">0&nbsp;:</span><span id="computerScore" class="score">&nbsp;0</span>
+                <div class="score">
+                    <span id="playerScore">0</span><span>:</span><span id="computerScore">0</span>
+                </div>
             </div>
         <!-- Scoreboard ends here -->
         <!-- Results message starts here -->

@@ -30,6 +30,7 @@ h1 {
 span {
     font-size: 40px;
     font-weight: 700;
+    padding: 0 10px;
 }
 
 /* ID styling */
@@ -44,6 +45,10 @@ span {
 
 #scissors:hover {
     cursor: pointer;
+}
+
+#playerBadge {
+    order: 1;
 }
 
 #computerBadge {
@@ -98,13 +103,13 @@ span {
 }
 
 .scoreBoard {
-    order: 1;
-    display: flex;
-    /* justify-content: space-around; */
-    align-items: center;
     order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #13C4A3;
     height: 180px;
+    width: 50vw;
     padding: 40px;
     color: #2E282A;
     border-radius: 10px;
@@ -122,6 +127,11 @@ span {
     margin: 0 40px;
     border-radius: 5px;
 
+}
+
+.score {
+    order: 2;
+    padding: 0 20px;
 }
 
 .message {
