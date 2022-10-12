@@ -18,7 +18,7 @@ body {
     background-color: #2E282A;
 }
 
-img {
+svg {
     height: 78px;
     width: auto;
 }
@@ -94,6 +94,19 @@ span {
     gap: 10px;
 }
 
+.choice:hover {
+    transform: translateY(-10px);
+    transition: all .3s ease-in-out;
+    background-color: #13C4A3;
+    color: #faebd7;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.choice:hover svg {
+    fill: #faebd7;
+}
+
 .gameArea {
     display: flex;
     flex-direction: column;
@@ -137,7 +150,7 @@ span {
 .message {
     order: 3;
     color: #13C4A3;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 500;
     padding: 15px 20px;
     margin-bottom: 44px;

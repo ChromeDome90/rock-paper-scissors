@@ -6,8 +6,8 @@ const playerScore_span = document.getElementById("playerScore");
 const computerScore_span = document.getElementById("computerScore");
 const scoreBoard_div = document.querySelector(".scoreBoard");
 const message_p = document.querySelector(".message");
-const playerIcon_img = document.getElementById("playerIcon");
-const computerIcon_img = document.getElementById("computerIcon");
+let playerIcon_img = document.getElementById("playerIcon");
+let computerIcon_img = document.getElementById("computerIcon");
 const messageOperator_span = document.querySelector(".messageOperator");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
@@ -24,20 +24,37 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-function win() {
+// Win round
+
+function win(userChoice, computerChoice) {
     playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
+    message_p.innerHTML = `Winner winner chicken dinner! ${capitalizeFirstLetter(userChoice)} beats ${(computerChoice)}.`;
 }
 
-function lose() {
+// Lose round
+
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    playerScore_span.innerHTML = playerScore;
+    message_p.innerHTML = `Bummer, you lost! ${capitalizeFirstLetter(userChoice)} loses to ${(computerChoice)}.`;
 }
 
-function tie() {
-    console.log("TIE!");
+// Tie round
+
+function tie(userChoice, computerChoice) {
+    message_p.innerHTML = `Would you look at that, it's a tie! ${capitalizeFirstLetter(userChoice)} equals ${(computerChoice)}.`;
 }
 
-// Player choice 
+// Capitalize first letter in message
+
+function capitalizeFirstLetter(userChoice, computerChoice) {
+    return userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
+  }
+
+// Game choice 
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -45,33 +62,46 @@ function game(userChoice) {
         case "rockscissors": // Player win conditions
         case "paperrock":
         case "scissorspaper":
-            win();
+            win(userChoice, computerChoice);
             break;
         case "rockpaper": // Player lose conditions
         case "paperscissors":
         case "scissorsrock":
-            lose();
+            lose(userChoice, computerChoice);
             break;
         case "rockrock": // Tie conditions
         case "paperpaper":
         case "scissorsscissors":
-            tie();
+            tie(userChoice, computerChoice);
             break;
     }
 }
 
-// Game buttons for user to choose/click
+function iconSelect(userChoice, computerChoice){
+    switch(userChoice) {
+        case "rock":
+            return playerIcon_img.src = "images/rock.svg"
+            break;
+    }
+}
+
+// Game buttons for user to click
 
 function main() {
     rock_div.addEventListener('click', function() {
         game("rock");
+        iconSelect();
     })
 
     paper_div.addEventListener('click', function() {
-        game("paper");;
+        game("paper");
     })
 
     scissors_div.addEventListener('click', function() {
-        game("scissors");;
+        game("scissors");
     })
+}
+
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5
 }
