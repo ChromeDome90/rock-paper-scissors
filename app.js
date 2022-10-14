@@ -13,23 +13,38 @@ const rock_btn = document.getElementById("rock");
 const paper_btn = document.getElementById("paper");
 const scissors_btn = document.getElementById("scissors");
 
+main();
+choiceIcon();
 
-
-
-
-// Generate random computer choice
+// Generate random computer choice and icon
 
 function getComputerChoice() {
+    const rockIconComp_img = document.getElementById("rockHidden");
+    const paperIconComp_img = document.getElementById("paperHidden");
+    const scissorsIconComp_img = document.getElementById("scissorsHidden");
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random() * 3);
+
+    if (randomNumber === 0 && rockIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('rock-hidden-comp').style.visibility = 'visible';
+    }
+    else if (randomNumber === 1 || randomNumber === 2 && paperIconComp_img.style.visibility === 'hidden' || scissorsIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('rock-hidden-comp').style.visibility = 'hidden';
+    }
+    if (randomNumber === 1 && paperIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('paper-hidden-comp').style.visibility = 'visible';
+    }
+    else if (randomNumber === 0 || randomNumber === 2 && rockIconComp_img.style.visibility === 'hidden' || scissorsIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('paper-hidden-comp').style.visibility = 'hidden';
+    }
+    if (randomNumber === 2 && scissorsIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('scissors-hidden-comp').style.visibility = 'visible';
+    } 
+    else if (randomNumber === 0 || randomNumber === 1 && rockIconComp_img.style.visibility === 'hidden' || paperIconComp_img.style.visibility === 'hidden') {
+        document.getElementById('scissors-hidden-comp').style.visibility = 'hidden';
+    }
     return choices[randomNumber];
 }
-
-// function getCompIcon() {
-//     const computerIcon_img = ["./images/rock.svg", "./images/paper.svg", "./images/scissors.svg"];
-//     const randomIcon = Math.floor(Math.random() * 3);
-//     return computerIcon_img[randomIcon];
-// }
 
 // Win round
 
@@ -61,40 +76,7 @@ function capitalizeFirstLetter(userChoice) {
     return userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
   }
 
-// Change icon when user/computer makes choice
-
-
-
-
-  //function choiceIcon(choiceText, elementID){
-    //switch(choiceText){
-        //case: 'rock':
-            //let img = document.createElement('img');
-            //img.src = "images/rock.svg";
-            //let src = document.getElementById(elementID);
-    //}
-
-//   function choiceIcon(userChoice, computerChoice) {
-//       switch (userChoice) {
-//         case 'rock':
-//             let img = document.createElement('img');
-//             img.src = "images/rock.svg";
-//             let src = document.getElementById('playerIcon');
-//             src.appendChild(img);
-//             break;
-//         case 'paper':
-//             let imgP = document.createElement('img');
-//             img.src = "images/paper.svg";
-//             let srcP = document.getElementById('playerIcon');
-//             srcP.appendChild(imgP);
-//       }
-//   }
-
-
-//update the icons for computer and player
-
-
-
+// Change icon when user makes choice
 
 function choiceIcon() {
     const rockIcon_img = document.getElementById("rockHidden");
@@ -113,20 +95,9 @@ function choiceIcon() {
         scissors_btn.addEventListener('click', ()=> {
             document.getElementById('scissorsHidden').style.visibility = 'visible';
         })
-    } else {
-        document.getElementById('rockHidden').style.visibility = 'hidden';
-        document.getElementById('paperHidden').style.visibility = 'hidden';
-        document.getElementById('scissorsHidden').style.visibility = 'hidden';
     }
+    return
 }
-
-
-
-
-
-
-
-
 
 // Game choice
 
@@ -162,18 +133,15 @@ function main() {
         //choiceIcon('rock','playerIcon');
         //choiceIcon(computerPick(),'computerIcon');
     })
-
     paper_btn.addEventListener('click', function() {
         gameRound('paper');
     })
-
     scissors_btn.addEventListener('click', function() {
         gameRound('scissors');
     })
 }
 
-main();
-choiceIcon();
+
 
 
 
