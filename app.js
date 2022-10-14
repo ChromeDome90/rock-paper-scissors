@@ -8,7 +8,6 @@ const scoreBoard_div = document.querySelector(".scoreBoard");
 const message_p = document.querySelector(".message");
 // const selectionButton = document.querySelectorAll('[data-selection]')
 // const playerIcon_img = document.getElementById("playerIcon");
-// const computerIcon_img = document.getElementById("computerIcon");
 const messageOperator_span = document.querySelector(".messageOperator");
 const rock_btn = document.getElementById("rock");
 const paper_btn = document.getElementById("paper");
@@ -25,6 +24,12 @@ function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
+
+// function getCompIcon() {
+//     const computerIcon_img = ["./images/rock.svg", "./images/paper.svg", "./images/scissors.svg"];
+//     const randomIcon = Math.floor(Math.random() * 3);
+//     return computerIcon_img[randomIcon];
+// }
 
 // Win round
 
@@ -87,23 +92,36 @@ function capitalizeFirstLetter(userChoice) {
 
 
 //update the icons for computer and player
-const rockIcon_img = document.querySelector("rockHidden");
-const paperIcon_img = document.getElementById("paperHidden");
-const scissorsIcon_img = document.getElementById("scissorsHidden");
 
 
-function active() {
-    if(document.getElementById("rockHidden").classList.contains("active")) {
-        document.getElementById("rockHidden").classList.remove("active");}
-          
-    // if(document.getElementById("paperHidden").classList.contains("active")) {
-    //     document.getElementsById("rockHidden").classList.remove("active")
-    //     ;}
-           
+
+
+function choiceIcon() {
+    const rockIcon_img = document.getElementById("rockHidden");
+    const paperIcon_img = document.getElementById("paperHidden");
+    const scissorsIcon_img = document.getElementById("scissorsHidden");
+
+    if (rockIcon_img.style.visibility = 'hidden') {
+        rock_btn.addEventListener('click', ()=> {
+            document.getElementById('rockHidden').style.visibility = 'visible';
+        })
+    } if (paperIcon_img.style.visibility = 'hidden') {
+        paper_btn.addEventListener('click', ()=> {
+            document.getElementById('paperHidden').style.visibility = 'visible';
+        })
+    } if (scissorsIcon_img.style.visibility = 'hidden') {
+        scissors_btn.addEventListener('click', ()=> {
+            document.getElementById('scissorsHidden').style.visibility = 'visible';
+        })
+    } else {
+        document.getElementById('rockHidden').style.visibility = 'hidden';
+        document.getElementById('paperHidden').style.visibility = 'hidden';
+        document.getElementById('scissorsHidden').style.visibility = 'hidden';
+    }
 }
 
 
-active();
+
 
 
 
@@ -155,6 +173,7 @@ function main() {
 }
 
 main();
+choiceIcon();
 
 
 
