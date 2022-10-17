@@ -65,7 +65,8 @@ span {
     align-items: center;
 }
 
-#messageOperator {
+#messageSymbol {
+    content: '';
     color: #13C4A3;
     font-size: 78px;
     font-weight: 300;

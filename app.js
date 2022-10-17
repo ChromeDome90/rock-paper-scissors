@@ -2,6 +2,7 @@
 
 let playerScore = 0;
 let computerScore = 0;
+const messageSymbol_span = document.getElementById("messageSymbol");
 const playerScore_span = document.getElementById("playerScore");
 const computerScore_span = document.getElementById("computerScore");
 const scoreBoard_div = document.querySelector(".scoreBoard");
@@ -50,6 +51,7 @@ function getComputerChoice() {
 
 function win(userChoice, computerChoice) {
     playerScore++;
+    messageSymbol_span.innerHTML = '>';
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
     message_p.innerHTML = `Winner winner chicken dinner! ${capitalizeFirstLetter(userChoice)} beats ${(computerChoice)}.`;
@@ -59,6 +61,7 @@ function win(userChoice, computerChoice) {
 
 function lose(userChoice, computerChoice) {
     computerScore++;
+    messageSymbol_span.innerHTML = '<';
     computerScore_span.innerHTML = computerScore;
     playerScore_span.innerHTML = playerScore;
     message_p.innerHTML = `Bummer, you lost! ${capitalizeFirstLetter(userChoice)} loses to ${(computerChoice)}.`;
@@ -67,6 +70,7 @@ function lose(userChoice, computerChoice) {
 // Tie round
 
 function tie(userChoice, computerChoice) {
+    messageSymbol_span.innerHTML = '=';
     message_p.innerHTML = `Would you look at that, it's a tie! ${capitalizeFirstLetter(userChoice)} equals ${(computerChoice)}.`;
 }
 
@@ -75,6 +79,8 @@ function tie(userChoice, computerChoice) {
 function capitalizeFirstLetter(userChoice) {
     return userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
   }
+
+
 
 // Change icon when user makes choice
 
