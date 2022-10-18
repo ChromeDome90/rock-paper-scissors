@@ -30,7 +30,6 @@ const modalEmoji = document.getElementById("modalEmoji");
 main();
 choiceIcon();
 
-
 // Generate random computer choice and icon
 
 function getComputerChoice() {
@@ -40,22 +39,21 @@ function getComputerChoice() {
     if (randomNumber === 0) {
         rockIconComp_img.classList.add('activeIcon');
     }
-    if (randomNumber === 1 || randomNumber === 2) {
+    else {
         rockIconComp_img.classList.remove('activeIcon');
     }
     if (randomNumber === 1) {
         paperIconComp_img.classList.add('activeIcon');
     }
-    if (randomNumber === 0 || randomNumber === 2) {
+    else {
         paperIconComp_img.classList.remove('activeIcon');
     }
     if (randomNumber === 2) {
         scissorsIconComp_img.classList.add('activeIcon');
     }
-    if (randomNumber === 0 || randomNumber === 1) {
+    else {
         scissorsIconComp_img.classList.remove('activeIcon');
     }
-
     return choices[randomNumber];
 }
 
@@ -136,16 +134,15 @@ function gameRound(userChoice) {
         //let some time pass before end game modal pops up
         //Update the game display and present reset button
     }
+    isGameOver();
 }
 
 // End game modal and reset
 
 function isGameOver() {
-    for (let i = 0; i < 5; i++) {
-        if (playerScore == 5 || computerScore == 5) {
-            openEndGameModal();
-        }
-    } 
+    if (playerScore === 5 || computerScore === 5) {
+        openEndGameModal();
+    }
 }
 
 // Modal message based on win or lose condition
@@ -192,18 +189,18 @@ function playAgain() {
 function main() {
     rock_btn.addEventListener('click', function() {
         gameRound('rock');
-        isGameOver();
+        // isGameOver();
         // choiceIcon('rock');
         //choiceIcon('rock','playerIcon');
         //choiceIcon(computerPick(),'computerIcon');
     })
     paper_btn.addEventListener('click', function() {
         gameRound('paper');
-        isGameOver();
+        // isGameOver();
     })
     scissors_btn.addEventListener('click', function() {
         gameRound('scissors');
-        isGameOver();
+        // isGameOver();
     })
 }
 
