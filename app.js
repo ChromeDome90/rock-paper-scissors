@@ -1,5 +1,7 @@
 // Rock Paper Scissors Game
 
+"use strict"
+
 let playerScore = 0;
 let computerScore = 0;
 const messageSymbol_span = document.getElementById("messageSymbol");
@@ -9,20 +11,27 @@ const scoreBoard_div = document.querySelector(".scoreBoard");
 const message_p = document.querySelector(".message");
 // const selectionButton = document.querySelectorAll('[data-selection]')
 // const playerIcon_img = document.getElementById("playerIcon");
-const messageOperator_span = document.querySelector(".messageOperator");
+// const messageOperator_span = document.querySelector(".messageOperator");
 const rock_btn = document.getElementById("rock");
 const paper_btn = document.getElementById("paper");
 const scissors_btn = document.getElementById("scissors");
+const rockIcon_img = document.getElementById("rockHidden");
+const paperIcon_img = document.getElementById("paperHidden");
+const scissorsIcon_img = document.getElementById("scissorsHidden");
+const rockIconComp_img = document.getElementById("rock-hidden-comp");
+const paperIconComp_img = document.getElementById("paper-hidden-comp");
+const scissorsIconComp_img = document.getElementById("scissors-hidden-comp");
+const endGameModal = document.getElementById("endGameModal");
+const modalOverlay = document.getElementById("modalOverlay")
+
 
 main();
 choiceIcon();
 
+
 // Generate random computer choice and icon
 
 function getComputerChoice() {
-    const rockIconComp_img = document.getElementById("rockHidden");
-    const paperIconComp_img = document.getElementById("paperHidden");
-    const scissorsIconComp_img = document.getElementById("scissorsHidden");
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -85,10 +94,6 @@ function capitalizeFirstLetter(userChoice) {
 // Change icon when user makes choice
 
 function choiceIcon() {
-    const rockIcon_img = document.getElementById("rockHidden");
-    const paperIcon_img = document.getElementById("paperHidden");
-    const scissorsIcon_img = document.getElementById("scissorsHidden");
-
     if (rockIcon_img.style.visibility = 'hidden') {
         rock_btn.addEventListener('click', ()=> {
             document.getElementById('rockHidden').style.visibility = 'visible';
@@ -130,20 +135,62 @@ function gameRound(userChoice) {
     }
 }
 
+// End game modal and reset
+
+function isGameOver() {
+    for (let i = 0; i < 5; i++) {
+        if (playerScore === 5 || computerScore === 5) {
+            openEndGameModal();
+        }
+    } 
+}
+
+
+
+function openEndGameModal() {
+    endGameModal.classList.add('activeModal');
+    modalOverlay.classList.add('activeModal');
+}
+
+// function closeEndgameModal() {
+//     endGameModal.classList.remove('activeModal');
+//     modalOverlay.classList.remove('activeModal');
+// }
+
+function playAgain() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScore_span.innerText = "0";
+    computerScore_span.innerText = "0";
+    messageSymbol_span.innerText = "";
+    rockIcon_img.style.visibility = "hidden";
+    rockIconComp_img.style.visibility = "hidden"
+    paperIcon_img.style.visibility = "hidden";
+    paperIconComp_img.style.visibility = "hidden";
+    scissorsIcon_img.style.visibility = "hidden";
+    scissorsIconComp_img.style.visibility = "hidden";
+    message_p.innerHTML = "Let's play again! You know the rules, first to 5 wins! 🔥";
+    endGameModal.classList.remove('activeModal');
+    modalOverlay.classList.remove('activeModal');
+}
+
 // Game buttons for user to click
 
 function main() {
     rock_btn.addEventListener('click', function() {
         gameRound('rock');
+        isGameOver();
         // choiceIcon('rock');
         //choiceIcon('rock','playerIcon');
         //choiceIcon(computerPick(),'computerIcon');
     })
     paper_btn.addEventListener('click', function() {
         gameRound('paper');
+        isGameOver();
     })
     scissors_btn.addEventListener('click', function() {
         gameRound('scissors');
+        isGameOver();
     })
 }
 

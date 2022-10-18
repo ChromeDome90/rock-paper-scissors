@@ -72,24 +72,21 @@ span {
     font-weight: 300;
 }
 
-/* #rockHidden {
-    visibility: hidden;
-}
-
-#paperHidden {
-    visibility: hidden;
-}
-
-#scissorsHidden {
-    visibility: hidden;
-} */
-
 #playerBadge {
     order: 1;
 }
 
 #computerBadge {
     order: 3;
+}
+
+/* #endGameModal {
+    display: none;
+} */
+
+#modalEmoji {
+    font-size: 44px;
+    padding: 20px;
 }
 
 /* Class styling */
@@ -184,7 +181,6 @@ span {
     font-size: 30px;
     font-weight: 700;
     padding: 5px 10px;
-    /* margin: 0 40px; */
     border-radius: 5px;
 
 }
@@ -222,6 +218,67 @@ span {
 
 .active {
     visibility: hidden;
+}
+
+/* Modal window styling */
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    padding: 20px;
+    text-align: center;
+    background-color: #faebd7;
+    color: #13C4A3;
+    height: 250px;
+    width: 300px;
+    border: 5px solid #13C4A3;
+    border-radius: 10px;
+}
+
+.modal.activeModal {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.activeModal {
+    display: block;
+}
+
+.modal-title {
+    font-size: 39px;
+    font-weight: 700;
+}
+
+.modal-reset-btn {
+    background-color: #13C4A3;
+    color: #faebd7;
+    padding: 5px 18px;
+    border-radius: 7px;
+}
+
+.modal-reset-btn:hover {
+    cursor: pointer;
+    background-color: #faebd7;
+    border: 1px solid #13C4A3;
+    color: #13C4A3;
+    transition: all .15s ease-in-out;
+}
+
+.activeModal {
+    display: block;
 }
 
 
