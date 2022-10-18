@@ -216,6 +216,32 @@ span {
     width: auto;
 }
 
+.rockComp {
+    visibility: hidden;
+}
+
+.rockComp.activeIcon {
+    visibility: visible;
+}
+
+.paperComp {
+    visibility: hidden;
+}
+
+.paperComp.activeIcon {
+    visibility: visible;
+}
+
+.scissorsComp {
+    visibility: hidden;
+}
+
+.scissorsComp.activeIcon {
+    visibility: visible;
+}
+
+
+
 .active {
     visibility: hidden;
 }
@@ -258,23 +284,29 @@ span {
 }
 
 .modal-title {
+    margin-top: 5px;
     font-size: 39px;
     font-weight: 700;
 }
 
 .modal-reset-btn {
-    background-color: #13C4A3;
-    color: #faebd7;
+    background-color: #faebd7;
+    color: #13C4A3;
     padding: 5px 18px;
+    border: 1px solid #13C4A3;
     border-radius: 7px;
 }
 
 .modal-reset-btn:hover {
     cursor: pointer;
-    background-color: #faebd7;
-    border: 1px solid #13C4A3;
-    color: #13C4A3;
+    background-color: #13C4A3;
+    color: #faebd7;
     transition: all .15s ease-in-out;
+}
+
+.modal-reset-btn:active {
+    transform: translateY(8px);
+    transition: all 175ms ease-in-out;
 }
 
 .activeModal {

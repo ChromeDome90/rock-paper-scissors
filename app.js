@@ -22,7 +22,9 @@ const rockIconComp_img = document.getElementById("rock-hidden-comp");
 const paperIconComp_img = document.getElementById("paper-hidden-comp");
 const scissorsIconComp_img = document.getElementById("scissors-hidden-comp");
 const endGameModal = document.getElementById("endGameModal");
-const modalOverlay = document.getElementById("modalOverlay")
+const modalOverlay = document.getElementById("modalOverlay");
+const modalMsg = document.getElementById("modal-msg");
+const modalEmoji = document.getElementById("modalEmoji");
 
 
 main();
@@ -35,24 +37,25 @@ function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random() * 3);
 
-    if (randomNumber === 0 && rockIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('rock-hidden-comp').style.visibility = 'visible';
+    if (randomNumber === 0) {
+        rockIconComp_img.classList.add('activeIcon');
     }
-    else if (randomNumber === 1 || randomNumber === 2 && paperIconComp_img.style.visibility === 'hidden' || scissorsIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('rock-hidden-comp').style.visibility = 'hidden';
+    if (randomNumber === 1 || randomNumber === 2) {
+        rockIconComp_img.classList.remove('activeIcon');
     }
-    if (randomNumber === 1 && paperIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('paper-hidden-comp').style.visibility = 'visible';
+    if (randomNumber === 1) {
+        paperIconComp_img.classList.add('activeIcon');
     }
-    else if (randomNumber === 0 || randomNumber === 2 && rockIconComp_img.style.visibility === 'hidden' || scissorsIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('paper-hidden-comp').style.visibility = 'hidden';
+    if (randomNumber === 0 || randomNumber === 2) {
+        paperIconComp_img.classList.remove('activeIcon');
     }
-    if (randomNumber === 2 && scissorsIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('scissors-hidden-comp').style.visibility = 'visible';
-    } 
-    else if (randomNumber === 0 || randomNumber === 1 && rockIconComp_img.style.visibility === 'hidden' || paperIconComp_img.style.visibility === 'hidden') {
-        document.getElementById('scissors-hidden-comp').style.visibility = 'hidden';
+    if (randomNumber === 2) {
+        scissorsIconComp_img.classList.add('activeIcon');
     }
+    if (randomNumber === 0 || randomNumber === 1) {
+        scissorsIconComp_img.classList.remove('activeIcon');
+    }
+
     return choices[randomNumber];
 }
 
@@ -139,23 +142,33 @@ function gameRound(userChoice) {
 
 function isGameOver() {
     for (let i = 0; i < 5; i++) {
-        if (playerScore === 5 || computerScore === 5) {
+        if (playerScore == 5 || computerScore == 5) {
             openEndGameModal();
         }
     } 
 }
 
+// Modal message based on win or lose condition
 
+function endGameMessage() {
+    if (playerScore > computerScore) {
+        modalMsg.innerHTML = "You won!";
+        modalEmoji.innerHTML = "🥳";
+    }
+    else if (playerScore < computerScore) {
+        modalMsg.innerHTML = "You lost...";
+        modalMsg.style.fontSize = "28px";
+        modalEmoji.innerHTML = "😥";
+    }
+  }
 
 function openEndGameModal() {
+    endGameMessage();
     endGameModal.classList.add('activeModal');
     modalOverlay.classList.add('activeModal');
 }
 
-// function closeEndgameModal() {
-//     endGameModal.classList.remove('activeModal');
-//     modalOverlay.classList.remove('activeModal');
-// }
+// Reset game
 
 function playAgain() {
     playerScore = 0;
@@ -164,11 +177,11 @@ function playAgain() {
     computerScore_span.innerText = "0";
     messageSymbol_span.innerText = "";
     rockIcon_img.style.visibility = "hidden";
-    rockIconComp_img.style.visibility = "hidden"
     paperIcon_img.style.visibility = "hidden";
-    paperIconComp_img.style.visibility = "hidden";
     scissorsIcon_img.style.visibility = "hidden";
-    scissorsIconComp_img.style.visibility = "hidden";
+    rockIconComp_img.classList.remove('activeIcon');
+    paperIconComp_img.classList.remove('activeIcon');
+    scissorsIconComp_img.classList.remove('activeIcon');
     message_p.innerHTML = "Let's play again! You know the rules, first to 5 wins! 🔥";
     endGameModal.classList.remove('activeModal');
     modalOverlay.classList.remove('activeModal');

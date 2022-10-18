@@ -70,9 +70,9 @@
                 </div>
                 <span id="messageSymbol"></span>
                 <div id="computerIcon">
-                    <img src="images/rock.svg" id="rock-hidden-comp" class="active" alt="rock icon">
-                    <img src="images/paper.svg" id="paper-hidden-comp" class="active" alt="paper icon">
-                    <img src="images/scissors.svg" id="scissors-hidden-comp" class="active" alt="scissors icon">
+                    <img src="images/rock.svg" id="rock-hidden-comp" class="rockComp" alt="rock icon">
+                    <img src="images/paper.svg" id="paper-hidden-comp" class="paperComp" alt="paper icon">
+                    <img src="images/scissors.svg" id="scissors-hidden-comp" class="scissorsComp" alt="scissors icon">
                 </div>
             </div>
             <p class="message">石 | 紙 | はさみ&nbsp;&nbsp;First to 5 wins! 🥳</p>
@@ -83,8 +83,8 @@
     </footer>
      <!-- End game modal starts here -->
      <div id="endGameModal" class="modal">
-        <p id="modal-msg" class="modal-title">You won!</p>
-        <p id="modalEmoji">🥳</p>
+        <p id="modal-msg" class="modal-title"></p>
+        <p id="modalEmoji"></p>
         <button id="resetBtn" class="modal-reset-btn" onclick="playAgain()">Play again</button>
     </div>
     <div id="modalOverlay" class="overlay"></div>
