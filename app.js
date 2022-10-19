@@ -64,7 +64,8 @@ function win(userChoice, computerChoice) {
     messageSymbol_span.innerHTML = '>';
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
-    message_p.innerHTML = `Winner winner chicken dinner! ${capitalizeFirstLetter(userChoice)} beats ${(computerChoice)}.`;
+    message_p.innerHTML = `Winner winner chicken dinner! 
+    ${capitalizeFirstLetter(userChoice)} beats ${(computerChoice)}.`;
 }
 
 // Lose round
@@ -74,14 +75,16 @@ function lose(userChoice, computerChoice) {
     messageSymbol_span.innerHTML = '<';
     computerScore_span.innerHTML = computerScore;
     playerScore_span.innerHTML = playerScore;
-    message_p.innerHTML = `Bummer, you lost! ${capitalizeFirstLetter(userChoice)} loses to ${(computerChoice)}.`;
+    message_p.innerHTML = `Bummer, you lost! 
+    ${capitalizeFirstLetter(userChoice)} loses to ${(computerChoice)}.`;
 }
 
 // Tie round
 
 function tie(userChoice, computerChoice) {
     messageSymbol_span.innerHTML = '=';
-    message_p.innerHTML = `Would you look at that, it's a tie! ${capitalizeFirstLetter(userChoice)} equals ${(computerChoice)}.`;
+    message_p.innerHTML = `Would you look at that, it's a tie! 
+    ${capitalizeFirstLetter(userChoice)} equals ${(computerChoice)}.`;
 }
 
 // Capitalize first letter in message
