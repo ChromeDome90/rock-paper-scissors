@@ -134,8 +134,6 @@ function gameRound(userChoice) {
         case "scissorsscissors":
             tie(userChoice, computerChoice);
             break;
-        //let some time pass before end game modal pops up
-        //Update the game display and present reset button
     }
     isGameOver();
 }
@@ -192,18 +190,12 @@ function playAgain() {
 function main() {
     rock_btn.addEventListener('click', function() {
         gameRound('rock');
-        // isGameOver();
-        // choiceIcon('rock');
-        //choiceIcon('rock','playerIcon');
-        //choiceIcon(computerPick(),'computerIcon');
     })
     paper_btn.addEventListener('click', function() {
         gameRound('paper');
-        // isGameOver();
     })
     scissors_btn.addEventListener('click', function() {
         gameRound('scissors');
-        // isGameOver();
     })
 }
 
