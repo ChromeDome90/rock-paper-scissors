@@ -300,12 +300,6 @@ span {
     transform: translateY(-3px);
     transition: all 250ms ease-in-out;
     padding: 10px 28px;
-
-    /* transform: translateY(-10px);
-    transition: all .3s ease-in-out;
-    background-color: #13C4A3;
-    color: #faebd7;
-    padding: 20px; */
 }
 
 .modal-reset-btn:active {
