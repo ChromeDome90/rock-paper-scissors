@@ -396,7 +396,7 @@ span {
     }
 }
 
-@media screen and (max-width: 393px) {
+@media screen and (max-width: 430px) {
     .header {
         height: auto;
     }
