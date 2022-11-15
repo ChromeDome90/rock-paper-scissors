@@ -91,10 +91,19 @@ span {
     display: flex;
 }
 
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
 .header {
     display: flex;
     padding: 3vw;
     justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     background-color: #faebd7;
     color: #13C4A3;
@@ -134,7 +143,8 @@ span {
     transition: all .3s ease-in-out;
     background-color: #13C4A3;
     color: #faebd7;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 0;
     border-radius: 10px;
 }
 
@@ -236,8 +246,6 @@ span {
     visibility: visible;
 }
 
-
-
 .active {
     visibility: hidden;
 }
@@ -312,6 +320,86 @@ span {
 }
 
 
+
+/* Media query styles */
+
+@media screen and (max-width: 900px) {
+    .header p {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+    .scoreBoard {
+        width: 450px;
+    }
+    .badge {
+        font-size: 20px;
+    }
+    .score span {
+        font-size: 28px;
+    }
+    .message {
+        font-size: 15px;
+        margin: 0 40px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        flex-direction: column;
+        /* height: 100vh; */
+    }
+    .header {
+        height: 320px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .header h1 {
+        padding-bottom: 20px;
+    }
+    .header p {
+        /* margin-bottom: 20px; */
+        width: 80%;
+    }
+    svg {
+        height: 50px;
+    }
+    button {
+        width: 20%;
+        flex-direction: row;
+        padding: 0 10px;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .choice {
+        display: block;
+    }
+    .choice:hover {
+        width: 20%;
+        transform: translateY(-3px);
+        padding: 7px 0;
+    }
+    .choice:hover svg {
+        fill: #faebd7;
+    }
+    .choice:active {
+        transform: translateY(3px);
+        transition: all .4s ease-out;
+    }
+    .btn-text {
+        font-size: 20px;
+    }
+    .gameArea {
+        height: 60vh;
+        width: 100%;
+    }
+    .scoreBoard {
+        padding: 0;
+    }
+}
 
 
 

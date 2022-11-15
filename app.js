@@ -195,8 +195,3 @@ function main() {
         gameRound('scissors');
     })
 }
-
-
-
-
-
