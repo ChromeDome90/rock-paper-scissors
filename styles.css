@@ -397,8 +397,15 @@ span {
 }
 
 @media screen and (max-width: 430px) {
+    .container {
+        height: 80vh;
+        justify-content: center;
+    }
     .header {
+        position: fixed;
+        bottom: 0;
         height: auto;
+        order: 3;
     }
     .header h1 {
         display: none;
@@ -435,6 +442,9 @@ span {
     }
     .score {
         padding: 0 5px;
+    }
+    .message {
+        margin: 0 20px;
     }
 }
 
