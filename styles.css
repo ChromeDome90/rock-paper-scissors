@@ -436,15 +436,20 @@ span {
     .messageIcons {
         gap: 60px;
     }
+    .gameArea {
+        height: 80vh;
+    }
     .scoreBoard {
         width: 90%;
         height: 80px;
+        margin-bottom: 20px;
     }
     .score {
         padding: 0 5px;
     }
     .message {
-        margin: 0 20px;
+        font-size: 13px;
+        margin: 0 10px;
     }
 }
 
